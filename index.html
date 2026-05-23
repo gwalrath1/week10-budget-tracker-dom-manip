@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  </head>
+
+<body class="p-3 mb-2 bg-primary bg-opacity-75">
+
+
+  <div class="overall container  p-4 rounded-4 shadow-lg p-3 mb-5 rounded p-3 mb-2">
+    <h1 class="ms-2 text-primary-emphasis">Budget Tracker</h1>
+
+    <!-- BUDGET TABLE -->
+    <div class="row">
+      <div class="col-lg-7 container-md rounded-4 shadow-lg p-3 mb-5 rounded bg-primary-subtle table-responsive">
+        <table id="purchases-table" class="table table-sm  mt-2 table-primary text-body-tertiary">
+          <thead>
+            <tr>
+              <th scope="col">Purchase</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Date</th>
+              <th scope="col">Category</th>
+              <th scope="col">Balance</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <tr>
+              <td>Uber</td>
+              <td>34.50</td>
+              <td>3/15/2026</td>
+              <td>Transportation</td>
+              <td id="balance-in-table">3,000</td>
+            </tr>
+            <tr>
+              <td>Acme Supermarket</td>
+              <td>122.89</td>
+              <td>3/09/2026</td>
+              <td>Groceries</td>
+              <td>2875</td>
+            </tr>
+            <tr>
+              <td>Monthly Rent</td>
+              <td>2,000</td>
+              <td>3/01/2026</td>
+              <td>Rent and Utilities</td>
+              <td>875</td>
+            </tr>
+          </tbody>
+        </table>
+
+        
+
+        <!-- BUDGET PIE CHART AND SUMMARY TABLE-->
+        <div class="chart-and-summary">
+
+          <!-- SUMMARY TABLE -->
+           <table id="summary-table" class="table w-50 mt-4">
+             <thead>
+               <tr>
+                 <th scope="col">Total Budget:</th>
+                 <td id="total-budget-summary"></td>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <th scope="row">Total Expenses:</th>
+                 <td id="total-expenses-summary"></td>
+               </tr>
+               <tr>
+                 <th scope="row">Budget Left:</th>
+                 <td id="budget-left"></td>
+               </tr>
+             </tbody>
+           </table>
+   
+        <!-- BUDGET PIE CHART -->
+
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+        </div>
+
+      </div>
+
+      <!-- SPACING COLUMN -->
+
+      <div class="col-lg-auto"></div>
+      
+      <!-- ADD PURCHASE FORM -->
+      <div id="formContainer" class="col-lg-4 container-md rounded-4 shadow-lg p-3 mb-5 rounded bg-primary-subtle text-primary-emphasis">
+        <h4>Add purchases:</h4>
+
+        <form id="purchases-form ">
+          <div class="mb-3">
+            <label for="purchase" class="form-label fw-medium">Purchase</label> <!-- alright what the fuck is for. Or just label. tf is label dude. -->
+            <input id="purchase" type="text" class="form-control" aria-describedby="purchase"> <!-- aria-describedby basically means give context to this part of the form -->
+          </div>
+          <div class="mb-3">
+            <label for="amount" class="form-label fw-medium">Amount</label>
+            <input id="amount" type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label fw-medium">Date</label>
+            <input id="date" type="text" class="form-control"> 
+          </div>
+          <div class="mb-3">
+            <label for="category" class="form-label fw-medium">Category</label>
+            <input id="category" type="text" class="form-control"> 
+          </div>
+          <div class="d-grid gap-2">
+            <button id="add-purchases-button" type="button" class="btn btn-primary">Add</button>
+          </div>
+        </form>
+
+        <!-- ADD BUDGET FORM -->
+
+        <h4 class="mt-3">Add budget:</h4>
+
+        <form id="purchases-form">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fw-medium">Budget</label>
+            <input type="text" class="form-control" id="budget-entered" aria-describedby="budget-entered">
+          </div>
+          <div class="d-grid gap-2">
+            <button id="budget-button" type="button" class="btn btn-primary">Add</button>
+          </div>
+        </form>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

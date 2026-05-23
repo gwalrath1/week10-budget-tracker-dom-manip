@@ -1,0 +1,17 @@
+#overall-container {
+    background-color: white;
+}
+
+.overall {
+    background-color: white;
+}
+
+
+/* COPIED FROM WEBSITE: */
+.visuals-section {
+    padding: 15px; 
+}
+
+canvas {
+    max-height: 300px; 
+}

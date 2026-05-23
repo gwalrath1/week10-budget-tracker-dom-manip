@@ -1,0 +1,13 @@
+Using HTML, Bootstrap, and JavaScript create a single page website that contains the following:
+A Bootstrap styled table representing your choice of data.
+A Bootstrap styled form that allows a user to add a new row to the table when clicking on submit.
+
+I think I want to make a spreadsheet table, so a user can log in their purchases. Like budgeting?
+I'd like it to show your income versus expenses and subtract one from the other
+
+toggle for light and dark mode?
+
+alert for low balance?
+
+can I make date automated? 
+
