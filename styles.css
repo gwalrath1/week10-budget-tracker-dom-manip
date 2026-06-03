@@ -1,5 +1,7 @@
-#overall-container {
-    background-color: white;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .overall {
@@ -7,11 +9,7 @@
 }
 
 
-/* COPIED FROM WEBSITE: */
-.visuals-section {
-    padding: 15px; 
-}
 
-canvas {
-    max-height: 300px; 
-}
+
+
+
