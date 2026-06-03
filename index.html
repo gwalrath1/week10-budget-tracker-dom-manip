@@ -8,13 +8,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
-  </head>
+</head>
 
 <body class="p-3 mb-2 bg-primary bg-opacity-75">
 
 
-  <div class="overall container  p-4 rounded-4 shadow-lg p-3 mb-5 rounded p-3 mb-2">
+  <div class="overall container rounded-4 shadow-lg rounded p-3 my-5">
     <h1 class="ms-2 text-primary-emphasis">Budget Tracker</h1>
+
+    <div id="balance">Balance $0.00</div>
 
     <!-- BUDGET TABLE -->
     <div class="row">
@@ -30,12 +32,22 @@
             </tr>
           </thead>
           <tbody class="table-group-divider">
+            <!-- DUMMY TRANSACTIONS -->
+            <!--
             <tr>
               <td>Uber</td>
               <td>34.50</td>
               <td>3/15/2026</td>
               <td>Transportation</td>
               <td id="balance-in-table">3,000</td>
+              <td>
+                <button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                  </svg>
+                </button>
+              </td>
             </tr>
             <tr>
               <td>Acme Supermarket</td>
@@ -43,6 +55,14 @@
               <td>3/09/2026</td>
               <td>Groceries</td>
               <td>2875</td>
+              <td>
+                <button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                  </svg>
+                </button>
+              </td>
             </tr>
             <tr>
               <td>Monthly Rent</td>
@@ -50,38 +70,47 @@
               <td>3/01/2026</td>
               <td>Rent and Utilities</td>
               <td>875</td>
+              <td>
+                <button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                  </svg>
+                </button>
+              </td>
             </tr>
+            -->
           </tbody>
         </table>
 
-        
+
 
         <!-- BUDGET PIE CHART AND SUMMARY TABLE-->
         <div class="chart-and-summary">
 
           <!-- SUMMARY TABLE -->
-           <table id="summary-table" class="table w-50 mt-4">
-             <thead>
-               <tr>
-                 <th scope="col">Total Budget:</th>
-                 <td id="total-budget-summary"></td>
-               </tr>
-             </thead>
-             <tbody>
-               <tr>
-                 <th scope="row">Total Expenses:</th>
-                 <td id="total-expenses-summary"></td>
-               </tr>
-               <tr>
-                 <th scope="row">Budget Left:</th>
-                 <td id="budget-left"></td>
-               </tr>
-             </tbody>
-           </table>
-   
-        <!-- BUDGET PIE CHART -->
+          <table id="summary-table" class="table w-50 mt-4">
+            <thead>
+              <tr>
+                <th scope="col">Total Budget:</th>
+                <td id="total-budget-summary"></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Total Expenses:</th>
+                <td id="total-expenses-summary"></td>
+              </tr>
+              <tr>
+                <th scope="row">Budget Left:</th>
+                <td id="budget-left"></td>
+              </tr>
+            </tbody>
+          </table>
 
-        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+          <!-- BUDGET PIE CHART -->
+
+          <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
         </div>
 
@@ -90,28 +119,71 @@
       <!-- SPACING COLUMN -->
 
       <div class="col-lg-auto"></div>
-      
+
       <!-- ADD PURCHASE FORM -->
-      <div id="formContainer" class="col-lg-4 container-md rounded-4 shadow-lg p-3 mb-5 rounded bg-primary-subtle text-primary-emphasis">
+      <div id="formContainer"
+        class="col-lg-4 container-md rounded-4 shadow-lg p-3 mb-5 rounded bg-primary-subtle text-primary-emphasis">
         <h4>Add purchases:</h4>
 
         <form id="purchases-form ">
           <div class="mb-3">
-            <label for="purchase" class="form-label fw-medium">Purchase</label> <!-- alright what the fuck is for. Or just label. tf is label dude. -->
-            <input id="purchase" type="text" class="form-control" aria-describedby="purchase"> <!-- aria-describedby basically means give context to this part of the form -->
+            <label for="purchase" class="form-label fw-medium">Purchase Name</label>
+            <!-- alright what the fuck is for. Or just label. tf is label dude. -->
+            <input id="purchase" type="text" class="form-control" aria-describedby="purchase name" required>
+            <!-- aria-describedby basically means give context to this part of the form -->
           </div>
           <div class="mb-3">
             <label for="amount" class="form-label fw-medium">Amount</label>
-            <input id="amount" type="text" class="form-control">
+            <input id="amount" type="number" class="form-control" aria-describedby="amount of purchase" required>
           </div>
           <div class="mb-3">
             <label for="date" class="form-label fw-medium">Date</label>
-            <input id="date" type="text" class="form-control"> 
+            <input id="date" type="date" id="date" class="form-control" aria-describedby="date of purchase">
           </div>
-          <div class="mb-3">
-            <label for="category" class="form-label fw-medium">Category</label>
-            <input id="category" type="text" class="form-control"> 
+
+          <!-- FORM FOR CATEGORY OF PURCHASE -->
+          <label for="date" class="form-label fw-medium">Category</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="categories" id="exampleRadios1" value="home-utilities"
+              checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Home/Utilities
+            </label>
           </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="categories" id="exampleRadios2" value="transportation">
+            <label class="form-check-label" for="exampleRadios2">
+              Transportation
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="categories" id="exampleRadios2" value="groceries">
+            <label class="form-check-label" for="exampleRadios2">
+              Groceries
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="categories" id="exampleRadios2" value="insurance">
+            <label class="form-check-label" for="exampleRadios2">
+              Insurance
+            </label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" name="categories" id="exampleRadios2" value="restaurants-shopping-entertainment">
+            <label class="form-check-label" for="exampleRadios2">
+              Restaurants, Shopping, and Entertainment
+            </label>
+          </div>
+
+          <!-- INCOME OR EXPENSE -->
+          <div class="mt-4 mb-4">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select Income or Expense...</option>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+
           <div class="d-grid gap-2">
             <button id="add-purchases-button" type="button" class="btn btn-primary">Add</button>
           </div>
@@ -124,7 +196,7 @@
         <form id="purchases-form">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label fw-medium">Budget</label>
-            <input type="text" class="form-control" id="budget-entered" aria-describedby="budget-entered">
+            <input type="number" class="form-control" id="budget-entered" aria-describedby="budget-entered" required>
           </div>
           <div class="d-grid gap-2">
             <button id="budget-button" type="button" class="btn btn-primary">Add</button>
@@ -138,7 +210,7 @@
     </div>
   </div>
 
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
